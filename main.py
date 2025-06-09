@@ -1,8 +1,12 @@
 from manim import *
 
 
-class CreateCircle(Scene):
+class WriteRTK(Scene):
     def construct(self):
-        circle = Circle()  # create a circle
-        circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
-        self.play(Create(circle))  # show the circle on screen
+        rtk = Text("RTK")
+        rtk_expanded = Text("Real-Time Kinematic Positioning")
+
+        self.play(Write(rtk))
+        self.wait(1)
+        self.play(Transform(rtk, rtk_expanded))
+        self.wait(3)
